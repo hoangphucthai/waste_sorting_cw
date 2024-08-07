@@ -17,5 +17,9 @@ const WasteCategorySchema = new Schema(
         },
         
     },
-    {collation: 'wasteCategory'}
+    {collation: 'category'}
 )
+
+// solidify this Schema as a data model with mongoose and 
+// export it from this file
+module.exports = mongoose.model('category', WasteCategorySchema)
