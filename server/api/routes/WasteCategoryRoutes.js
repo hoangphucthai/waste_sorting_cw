@@ -3,7 +3,7 @@ const categoryBuilder = require('../controllers/WasteCategoryController')
 
 module.exports = app =>{
     app.route('/waste-categories')
-        .get(categoryBuilder.list_all_category)
+        .get(categoryBuilder.list_all_categories)
         .post(categoryBuilder.create_a_category);
 
     app.route('/waste-categories/:categoryId')
