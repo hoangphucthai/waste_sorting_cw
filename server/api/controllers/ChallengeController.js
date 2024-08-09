@@ -4,27 +4,27 @@ const Challenge = mongoose.model('Challenge')
 exports.list_all_challenges = (req, res) => {
     Challenge.find(
         {},
-        (err, words) => {
+        (err, challenges) => {
             if(err) res.send(err);
-            res.json(words);
+            res.json(challenges);
         }
     );
 };
 
 exports.create_a_challenge = (req, res) => {
     const newChallenge = new Vocab(req.body);
-    newChallenge.save((err, wor) => {
+    newChallenge.save((err, challenge) => {
         if(err) res.send(err);
-        res.json(word);
+        res.json(challenge);
     });
 };
 
 exports.read_a_challenge = (req, res) => {
     Challenge.findById(
         req.prams.challengeId,
-        (err, word) => {
+        (err, challenge) => {
             if(err) res.send(err);
-            res.json(word);
+            res.json(challenge);
         }
     );
 };
@@ -35,21 +35,21 @@ exports.update_a_challenge = (req, res) => {
         {_id: req.params.challengeId},
         req.body,
         {new: true},
-        (err, word) => {
+        (err, challenge) => {
             if(err) res.send(err);
-            res.json(word);
+            res.json(challenge);
         }
     );
 };
 
 exports.delete_a_challenge = (req, res) => {
     Challenge.deleteOne(
-        {_id: req.params.wordId},
+        {_id: req.params.challengeId},
         err => {
             if (err) res.send(err);
             res.json({
                 message: 'Challenge successfully deleted',
-                _id: req.params.wordId
+                _id: req.params.challengeId
             });
         }
     );
