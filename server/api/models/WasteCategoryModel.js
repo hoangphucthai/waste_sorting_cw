@@ -22,4 +22,4 @@ const WasteCategorySchema = new Schema(
 
 // solidify this Schema as a data model with mongoose and 
 // export it from this file
-module.exports = mongoose.model('category', WasteCategorySchema)
+module.exports = mongoose.model('Category', WasteCategorySchema)

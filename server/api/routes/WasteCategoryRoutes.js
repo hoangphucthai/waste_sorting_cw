@@ -1,6 +1,16 @@
 // Gotta update the link based on the controller
-const wasteBuilder = require('../controllers/WasteCategoryController')
+const categoryBuilder = require('../controllers/WasteCategoryController')
 
 module.exports = app =>{
+    app.route('/waste-categories')
+        .get(categoryBuilder.list_all_category)
+        .post(categoryBuilder.create_a_category);
+
+    app.route('/waste-categories/:categoryId')
+        .get(categoryBuilder.read_a_category)
+        .put(categoryBuilder.update_a_category)
+        .delete(categoryBuilder.delete_a_category)
+
+
 
 }
