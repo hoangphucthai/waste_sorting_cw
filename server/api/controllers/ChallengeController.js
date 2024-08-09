@@ -12,7 +12,7 @@ exports.list_all_challenges = (req, res) => {
 };
 
 exports.create_a_challenge = (req, res) => {
-    const newChallenge = new Vocab(req.body);
+    const newChallenge = new Challenge(req.body);
     newChallenge.save((err, challenge) => {
         if(err) res.send(err);
         res.json(challenge);

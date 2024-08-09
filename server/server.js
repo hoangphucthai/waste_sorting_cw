@@ -22,10 +22,13 @@ mongoose.connect('mongodb://root:example@mongo:27017/WasteSorting',
 const port = process.env.PORT || 3000;
 const app = express();
 app.use(cors());
-app.listen(port);
 app.use(bodyParser.json());
 
+ChallengeRoutes(app);
+UserRoutes(app);
+CategoryRoutes(app);
 ItemRoutes(app);
+
 app.listen(port);
 app.use((req, res) => {
     res.status(404).send({ url: `${req.originalUrl} not found` });

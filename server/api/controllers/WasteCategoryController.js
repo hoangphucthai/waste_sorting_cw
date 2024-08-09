@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Category = mongoose.model('Category')
 
-exports.list_all_categorys = (req, res) => {
+exports.list_all_categories = (req, res) => {
     Category.find(
         {},
         (err, categories) => {
