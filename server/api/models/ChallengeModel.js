@@ -13,7 +13,7 @@ const ChallenegSchema = new Schema(
             default: 'easy'
         },
         score: {
-            type: Int16Array,
+            type: Number,
             default: 0
         }
     },

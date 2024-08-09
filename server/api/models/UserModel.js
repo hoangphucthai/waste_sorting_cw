@@ -17,7 +17,7 @@ const UserSchema = new Schema(
             required: 'Password cannot be blank'
         },
         wasteScore: {
-            type: Int32Array,
+            type: Number,
             default: 0
         },
     },
