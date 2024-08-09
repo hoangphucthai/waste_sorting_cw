@@ -3,7 +3,7 @@ const challengeBuilder = require('../controllers/ChallengeController')
 
 module.exports = app =>{
     app.route('/challenges')
-        .get(challengeBuilder.read_all_challenges)
+        .get(challengeBuilder.list_all_challenges)
         .post(challengeBuilder.create_a_challenge);
 
 
