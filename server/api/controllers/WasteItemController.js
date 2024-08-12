@@ -13,7 +13,7 @@ exports.list_all_items = (req, res) => {
 
 exports.create_an_item = (req, res) => {
     const newItem = new Item(req.body);
-    newChallenge.save((err, item) => {
+    newItem.save((err, item) => {
         if(err) res.send(err);
         res.json(item);
     });

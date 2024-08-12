@@ -8,16 +8,16 @@ const WasteCategorySchema = new Schema(
             type: String,
             required: 'Category name cannot be blank'
         },
-        discription: {
+        description: {
             type: String,
         },
-        guidline: {
+        guideline: {
             type: String,
             default: 'None'
         },
         
     },
-    {collation: 'category'}
+    {collection: 'category'}
 )
 
 // solidify this Schema as a data model with mongoose and 

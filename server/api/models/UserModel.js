@@ -21,7 +21,7 @@ const UserSchema = new Schema(
             default: 0
         },
     },
-    {collation: 'user'}
+    {collection: 'user'}
 )
 
 // solidify this Schema as a data model with mongoose and 

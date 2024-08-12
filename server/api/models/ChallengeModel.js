@@ -19,7 +19,7 @@ const ChallenegSchema = new Schema(
         },
         name: {
             type: String,
-            // required: true
+            required: "Challenge name cannot be blank"
         }
     },
     // specifying a name for the collection

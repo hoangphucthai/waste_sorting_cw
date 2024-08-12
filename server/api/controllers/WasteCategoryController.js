@@ -12,8 +12,8 @@ exports.list_all_categories = (req, res) => {
 };
 
 exports.create_a_category = (req, res) => {
-    const newCategory = new Vocab(req.body);
-    newChallenge.save((err, category) => {
+    const newCategory = new Category(req.body);
+    newCategory.save((err, category) => {
         if(err) res.send(err);
         res.json(category);
     });
@@ -21,7 +21,7 @@ exports.create_a_category = (req, res) => {
 
 exports.read_a_category = (req, res) => {
     Category.findById(
-        req.prams.categoryId,
+        req.params.categoryId,
         (err, category) => {
             if(err) res.send(err);
             res.json(category);
