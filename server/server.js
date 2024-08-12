@@ -15,7 +15,7 @@ const ItemRoutes = require('./api/routes/WasteItemRoutes');
 
 // MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://root:example@mongo:27017/WasteSorting', 
+mongoose.connect('mongodb://localhost:27017/WasteSorting', 
     {useNewUrlParser: true}
 );
 

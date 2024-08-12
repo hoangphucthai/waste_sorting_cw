@@ -12,6 +12,8 @@ exports.list_all_challenges = (req, res) => {
 };
 
 exports.create_a_challenge = (req, res) => {
+    console.log(req.body);
+
     const newChallenge = new Challenge(req.body);
     newChallenge.save((err, challenge) => {
         if(err) res.send(err);
@@ -21,7 +23,7 @@ exports.create_a_challenge = (req, res) => {
 
 exports.read_a_challenge = (req, res) => {
     Challenge.findById(
-        req.prams.challengeId,
+        req.params.challengeId,
         (err, challenge) => {
             if(err) res.send(err);
             res.json(challenge);

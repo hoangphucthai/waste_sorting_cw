@@ -4,6 +4,7 @@ const Schema = mongoose.Schema;
 
 const ChallenegSchema = new Schema(
     {
+        
         description: {
             type: String,
             default: 'none'
@@ -15,6 +16,10 @@ const ChallenegSchema = new Schema(
         score: {
             type: Number,
             default: 0
+        },
+        name: {
+            type: String,
+            // required: true
         }
     },
     // specifying a name for the collection
