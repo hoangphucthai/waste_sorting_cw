@@ -1,16 +1,26 @@
 import vue from 'vue';
-import Challenge from 'views/Challenge.vue';
-import Login from 'views/Login.vue';
-import MainPage from 'views/MainPage.vue';
-import New from 'views/New.vue';    
-import NewCategory from 'views/NewCategory.vue';
-import NewItem from 'views/NewItem.vue';    
-import Register from 'views/Register.vue';
-import ShowCategory from 'views/ShowCategory.vue';
-import ShowItem from 'views/ShowItem.vue';
-import User from 'views/User.vue';
-import WasteManage from 'views/WasteManage.vue';
+// Category
+import NewCategory from 'views/category/NewCategory.vue';
+import EditCategory from 'views/category/EditCategory.vue';
+import ShowCategory from 'views/category/ShowCategory.vue';
+// challenge
+import NewChallenge from 'views/challenge/NewChallenge.vue';
+import EditChallenge from 'views/challenge/EditChallenge.vue';
+import ShowChallenge from 'views/challenge/ShowChallenge.vue';
+// identificate
+import Login from 'views/identificate/Login.vue';
+import Register from 'views/identificate/Register.vue';
+import ShowUser from 'views/identificate/ShowUser.vue';
+import EditUser from 'views/identificate/EditUser.vue';
+// item
+import NewItem from 'views/item/NewItem.vue';
+import EditItem from 'views/item/EditItem.vue';
+import ShowItem from 'views/item/ShowItem.vue';
+// Other
 import Welcome from 'views/Welcome.vue';
+import WasteManage from 'views/WasteManage.vue';
+import MainPage from 'views/MainPage.vue';
+
 import { component } from 'vue/types/umd';
 
 Vue.use(Router);
@@ -20,6 +30,7 @@ export default new Router({
     base: process.env.BASE_URL,
     linkActiveClass: 'active',
     routes: [
+        // First appear page
         {
             path: '/',
             redirect: '/welcome'
@@ -30,63 +41,89 @@ export default new Router({
             component: Welcome
         },
         {
-            path: '/login',
+            path: '/wasteManage',
+            name: 'waste-manage',
+            component: WasteManage
+        },
+        {
+            path: '/main',
+            name: 'main',
+            component: MainPage
+        },
+        // identificate
+        {
+            path: '/users/login',
             name: 'login',
             component: Login
         },
         
         {
-            path: '/register',
+            path: '/users/register',
             name: 'register',
             component: Register
         },
         
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/users/:userId',
+            name: 'show-user',
+            component: ShowUser
+        },
+        {
+            path: '/users/:userId/edit',
+            name: 'edit-user',
+            component: EditUser
+        },
+        // Category 
+        {
+            path: '/waste-categories/new',
+            name: 'new-category',
+            component: NewCategory
         },
         
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/waste-categories/:categoryId/edit',
+            name: 'edit-category',
+            component: EditCategory
         },
         
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/waste-categories/:categoryId',
+            name: 'show-category',
+            component: ShowCategory
+        },
+        // Challenge
+        {
+            path: '/challenges/new',
+            name: 'new-challenge',
+            component: NewChallenge
         },
         
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/challenges/:challengeId',
+            name: 'show-challenge',
+            component: ShowChallenge
         },
         
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/challenges/:challengeId/edit',
+            name: 'edit-challenge',
+            component: EditChallenge
         },
-        
+        // Item
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/waste-items/new',
+            name: 'mew-item',
+            component: NewItem
         },
-        
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/waste-items/:itemId',
+            name: 'show-item',
+            component: ShowItem
         },
-        
         {
-            path: '/welcome',
-            name: 'welcome',
-            component: Welcome
+            path: '/waste-items/:itemId/edit',
+            name: 'edit',
+            component: EditItem
         },
         
         
