@@ -7,10 +7,16 @@ services:
 
   mongo:
     image: mongo
+    command: mongod --port 27018
     restart: always
+    ports:
+      - '27018:27018'
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
       MONGO_INITDB_ROOT_PASSWORD: example
+    volumes:
+      - "mongo1_data:/data/db"
+      - "mongo1_config:/data/configdb"
 
   mongo-express:
     image: mongo-express
@@ -20,5 +26,9 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: root
       ME_CONFIG_MONGODB_ADMINPASSWORD: example
-      ME_CONFIG_MONGODB_URL: mongodb://localhost:27017/wasteSorting
+      ME_CONFIG_MONGODB_URL: mongodb://root:example@localhost:27018/
       ME_CONFIG_BASICAUTH: false
+
+volumes:
+  mongo1_data:
+  mongo1_config:

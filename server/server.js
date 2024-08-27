@@ -9,7 +9,7 @@ global.User = require('./api/models/UserModel');
 global.Category = require('./api/models/WasteCategoryModel');
 global.Item = require('./api/models/WasteItemModel');
 
-// Routes
+// Routestest
 const ChallengeRoutes = require('./api/routes/ChallengeRoutes');
 const UserRoutes = require('./api/routes/UserRoutes');
 const CategoryRoutes = require('./api/routes/WasteCategoryRoutes');
@@ -17,8 +17,12 @@ const ItemRoutes = require('./api/routes/WasteItemRoutes');
 
 // MongoDB
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/WasteSorting', 
-    { useNewUrlParser: true, useUnifiedTopology: true }
+// mongoose.connect('mongodb://root:example@localhost:27018/WasteSorting?retryWrites=true&w=majority', 
+//     // { useNewUrlParser: true, useUnifiedTopology: true }
+// );
+
+mongoose.connect('mongodb://root:example@localhost:27018/', 
+    // { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
 const port = process.env.PORT || 3000;

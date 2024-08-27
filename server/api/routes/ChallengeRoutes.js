@@ -12,6 +12,4 @@ module.exports = app =>{
         .put(challengeBuilder.update_a_challenge)
         .delete(challengeBuilder.delete_a_challenge)
 
-
-
 }
