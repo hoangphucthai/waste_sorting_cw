@@ -19,3 +19,8 @@ new Vue({
     router,
     render: h => h(App)
 }).$mount('#app');
+
+
+/* 
+ I added bootstrap here because I wanna use it, you can try to use it too
+*/

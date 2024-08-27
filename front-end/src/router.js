@@ -25,6 +25,10 @@ import { component } from 'vue/types/umd';
 
 Vue.use(Router);
 
+/* 
+NOTE: You need to modify this route if needed
++ All the route below is just basic routes, and there is maybe contain error, so plese check it again
+*/
 export default new Router({
     mode: 'history',
     base: process.env.BASE_URL,
@@ -50,7 +54,7 @@ export default new Router({
             name: 'main',
             component: MainPage
         },
-        // identificate
+        // identificate(user)
         {
             path: '/users/login',
             name: 'login',
@@ -122,7 +126,7 @@ export default new Router({
         },
         {
             path: '/waste-items/:itemId/edit',
-            name: 'edit',
+            name: 'edit-item',
             component: EditItem
         },
         

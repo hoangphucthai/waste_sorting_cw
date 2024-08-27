@@ -25,6 +25,7 @@ mongoose.connect('mongodb://root:example@localhost:27018/',
     // { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
+// Setup the port for server here
 const port = process.env.PORT || 3001;
 const app = express();
 
