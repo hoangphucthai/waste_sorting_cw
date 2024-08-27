@@ -25,7 +25,7 @@ mongoose.connect('mongodb://root:example@localhost:27018/',
     // { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 const app = express();
 
 // Middleware
